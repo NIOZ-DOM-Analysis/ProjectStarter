@@ -1,0 +1,61 @@
+#################################################################
+####                    USER DEFINED INPUT                   ####
+#################################################################
+
+# provide the information for the folder structure. Should be identical to DAS when at NIOZ
+Project.year<- '2018'         # what was the year the adventure started? An adventure can consist of multiple experiments over multiple years
+Project.name<- 'MCSMAC'      # Every adventure has a name!, probably also an acronym
+Owner.initials <- 'MGIA'        # Who's adventure is it? is it yours or is it someone else's (collaborator) aka. who will probably be first author?
+Analysis.name<- '200901_All2018_irinaprotocol'   # If you don't have an acronym for your experiment you don't have an experiment! - Dr. Craig Nelson, 2018
+Author<- 'Milou G.I. Arts'
+
+# path where to store the data, new folders will be created based on the information provided above.
+main.data.path <- 'C:\\Users\\Milou\\Documents\\NIOZ\\DATA'
+R.scrips.folder <- '..\\DataCleanup'
+
+
+#################################################################
+####               END OF USER DEFINED INPUT                 ####
+#################################################################
+#### Data management
+#Create directory for the experiment if it doesnt exist already
+# also creates objects with directory used in other scripts
+source(paste0(R.scrips.folder,'/create_directory.R'))
+
+
+# within this folder we are creating sub folders.
+# check if  the directory already exists, otherwise create new
+# also creates objects with directory used in other scripts
+source(paste0(R.scrips.folder,'/create_datafolders.R'))
+
+
+#if this is the first time running this, create a new project (in existing directory) 
+#and save this in the created R folder
+
+
+#################################################################
+####                    USER ACTION Required                 ####
+#################################################################
+'
+If you did not have all these folders, there is probably no data in the RAWdata folder.
+Put the raw data in here.
+we will only use the .csv files
+
+therefore, if there is data that needs to be processed (like the raw .mzXML files from the orbitrap that needs to be processed with MZmine2)
+which will create an .csv file process it first
+
+needed are the following files:
+POSTgapfilled.csv (output from MZmine2)
+PREgapfilled.csv (output from MZmine2)
+orbitrapsequence.csv (File Name and Sample Name from orbitrap sequence + added column of sample-methodblank-instrumentblank-standard)
+SIRIUS.mgf (exportfile from SIRIUS -> not from MZMINE! UNZIP the GNPS SIRIUS file in raw data folder)
+metadata.csv (metadata file)
+
+download the cytoscape data from GNPS and unzip into the Cytoscape folder and name the folder `analogs_on` and make sure there is a list of analogs
+
+##not yet done, but a good one also make a main_project_info_XXX.R in the R folder with the info of the experiment so that you dont have to change it all the time when
+you analyzed a different project and therefore changed the main script.
+'
+#################################################################
+####               END OF USER Required action               ####
+#################################################################
