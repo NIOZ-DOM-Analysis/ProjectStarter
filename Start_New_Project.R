@@ -3,15 +3,18 @@
 #################################################################
 
 # provide the information for the folder structure. Should be identical to DAS when at NIOZ
-Project.year<- '2018'         # what was the year the adventure started? An adventure can consist of multiple experiments over multiple years
-Project.name<- 'MCSMAC'      # Every adventure has a name!, probably also an acronym
-Owner.initials <- 'MGIA'        # Who's adventure is it? is it yours or is it someone else's (collaborator) aka. who will probably be first author?
-Analysis.name<- '200901_All2018_irinaprotocol'   # If you don't have an acronym for your experiment you don't have an experiment! - Dr. Craig Nelson, 2018
-Author<- 'Milou G.I. Arts'
+Project.year<- '2018'       # what was the year the project/experiment started?
+Project.name<- 'MCSMAC'     # A project is basically also an experiment, if you do have multiple experiments within one project, please use use sub.experiment
+                            # Every project has a name!, probably also an acronym "If you don't have an acronym for your experiment you don't have an experiment!" - Dr. Craig Nelson, 2018
+Owner.initials <- 'MGIA'    # Who's adventure is it? is it yours or is it someone else's (collaborator) aka. who will probably be first author?
+Author<- 'Milou G.I. Arts'  # Who are you? who is doing this analysis?
+# sub.experiment.name<- '200901_All2018_irinaprotocol'# this is optional, if you have multiple experiments, or multiple MZmine outputs from different settings, using this option will create a folder within your Project folder
+
 
 # path where to store the data, new folders will be created based on the information provided above.
-main.data.path <- 'C:\\Users\\Milou\\Documents\\NIOZ\\DATA'
-R.scrips.folder <- '..\\DataCleanup'
+main.data.path <- 'C:/Users/Milou/Documents/NIOZ/DATA'
+Data.cleanup.scripts <- file.path("..", "DataCleanup", "Scripts")
+Project.starter.scripts <- file.path(".","Scripts")
 
 
 #################################################################
@@ -20,13 +23,13 @@ R.scrips.folder <- '..\\DataCleanup'
 #### Data management
 #Create directory for the experiment if it doesnt exist already
 # also creates objects with directory used in other scripts
-source(paste0(R.scrips.folder,'/create_directory.R'))
+source(file.path(Project.starter.scripts,'create_directory.R'))
 
 
 # within this folder we are creating sub folders.
 # check if  the directory already exists, otherwise create new
 # also creates objects with directory used in other scripts
-source(paste0(R.scrips.folder,'/create_datafolders.R'))
+source(file.path(Project.starter.scripts,'create_datafolders.R'))
 
 
 #if this is the first time running this, create a new project (in existing directory) 
