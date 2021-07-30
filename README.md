@@ -39,7 +39,9 @@ SIRIUS.mgf (exportfile from SIRIUS -> not from MZMINE! UNZIP the GNPS SIRIUS fil
 
 Download the cytoscape data from GNPS and unzip into the Cytoscape folder and name the folder `analogs_on` and make sure there is a list of analogs
 
-Open the Rproject in the R folder and from there open the DataCleanup.R to read in your data and clean them
+If you want to make this project also a github project, follow these steps (https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-and-cloning-repositories/adding-a-repository-from-your-local-computer-to-github-desktop) to make create a repository from the Experiment/Project.Name folder
+
+Open the Rproject in the R folder and from there open the DataCleanup.R to read in your data and clean it.
 
 
 Example:
