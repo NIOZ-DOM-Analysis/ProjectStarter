@@ -2,8 +2,11 @@
 
 It will use the user defined input information to create new folders in the defined location, which the other repositories from NIOZ-DOM-Analyisis will use for data analysis.
 
+Open the 'Start_New_Project.R' file, this should open in Project:None, and you can check if the working directory [getwd()] is your /ProjectStarter folder
+
 Please only run the 'Start_New_Project.R' file. (The scripts 'create_datalfolders.R' & 'create_directory.R' in the scripts folder are incorporated in the 'Start_New_Project.R' script.)
 
+It will create a new Rproject
 This will result in the following folders:
 ```
 ├─ Github
@@ -19,6 +22,7 @@ This will result in the following folders:
           ├─ figures
           ├─ output
           ├─ R
+            ├─[Project.Name].Rproj
           ├─ RAWdata
 ```
 
@@ -35,8 +39,7 @@ SIRIUS.mgf (exportfile from SIRIUS -> not from MZMINE! UNZIP the GNPS SIRIUS fil
 
 Download the cytoscape data from GNPS and unzip into the Cytoscape folder and name the folder `analogs_on` and make sure there is a list of analogs
 
-##not yet done, but a good one also make a main_project_info_XXX.R in the R folder with the info of the experiment so that you dont have to change it all the time when
-you analyzed a different project and therefore changed the main script.
+Open the Rproject in the R folder and from there open the DataCleanup.R to read in your data and clean them
 
 
 Example:
@@ -55,6 +58,7 @@ The folder structure will look as followed:
             ├─ figures
             ├─ output
             ├─ R
+              ├─MZmine_settings_Dec18.Rproj
             ├─ RAWdata
           ├─ MZmine_settings_Jun19
             ├─ Cytoscape
@@ -62,6 +66,7 @@ The folder structure will look as followed:
             ├─ figures
             ├─ output
             ├─ R
+              ├─MZmine_settings_Jun19.Rproj
             ├─ RAWdata
       ├─ 2019
         ├─ ABCDom
@@ -70,6 +75,7 @@ The folder structure will look as followed:
           ├─ figures
           ├─ output
           ├─ R
+            ├─ABCDom.Rproj
           ├─ RAWdata  
         ├─ BA
           ├─ Cytoscape
@@ -77,5 +83,6 @@ The folder structure will look as followed:
           ├─ figures
           ├─ output
           ├─ R
+            ├─BA.Rproj
           ├─ RAWdata
 ```
