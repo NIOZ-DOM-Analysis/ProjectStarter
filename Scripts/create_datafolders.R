@@ -71,6 +71,7 @@ setwd(dirR)
 create_rproj(Project.name)
 
 #remove objects not needed and save
-rm(create_rproj(), dirOriginal)
+rm(create_rproj)
+rm(dirOriginal)
 
 save.image()
