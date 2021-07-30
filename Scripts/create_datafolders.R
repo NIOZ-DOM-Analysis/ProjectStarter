@@ -62,13 +62,15 @@ dirWrite<-file.path(dirOutput, 'write_read')
 #' setwd(tempdir())
 #' create_rproj('test')
 #' setwd(oldwd)
+
 create_rproj <- function(project){
   rproj <- file.path(dirOriginal, 'Scripts','rproj')
   file.copy(rproj, paste0(project, '.Rproj'))
 }
 
 setwd(dirR)
-create_rproj(Project.name)
+ifelse(exists("sub.experiment.name"), create_rproj(paste0(Project.name, "_", sub.experiment.name)), create_rproj(Project.name))
+
 
 #remove objects not needed and save
 rm(create_rproj)
