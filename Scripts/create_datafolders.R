@@ -13,8 +13,7 @@ List of alterations:
 
 # R directory, this will be the working directory, environment etc.
 ifelse(!dir.exists(file.path(data.path, 'R')), dir.create(file.path(data.path, 'R')), FALSE)
-# setwd(file.path(data.path, 'R'))
-# wd<-file.path(data.path, 'R')
+dirR<-file.path(data.path, 'R')
 
 # RAWdata directory, read only folder!
 ifelse(!dir.exists(file.path(data.path, 'RAWdata')), dir.create(file.path(data.path, 'RAWdata')), FALSE)
@@ -49,3 +48,5 @@ ifelse(!dir.exists(file.path(dirOutput, 'write_read')), dir.create(file.path(dir
 dirWrite<-file.path(dirOutput, 'write_read')
 
 #print(list.dirs(data.path))
+setwd(dirR)
+save.image(file = paste0(Project.name, ".RData"))
