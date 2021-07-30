@@ -10,7 +10,7 @@ List of alterations:
 
 
 '
-
+dirOriginal<-getwd()
 # R directory, this will be the working directory, environment etc.
 ifelse(!dir.exists(file.path(data.path, 'R')), dir.create(file.path(data.path, 'R')), FALSE)
 dirR<-file.path(data.path, 'R')
@@ -48,5 +48,29 @@ ifelse(!dir.exists(file.path(dirOutput, 'write_read')), dir.create(file.path(dir
 dirWrite<-file.path(dirOutput, 'write_read')
 
 #print(list.dirs(data.path))
+
+### provided by Peng Zhao, maker of the rosr package.
+#' Create a .Rproj file
+#'
+#' @param project the name of the .Rproj file
+#'
+#' @return a .Rproj.file
+#' @export
+#'
+#' @examples
+#' oldwd <- getwd()
+#' setwd(tempdir())
+#' create_rproj('test')
+#' setwd(oldwd)
+create_rproj <- function(project){
+  rproj <- file.path(dirOriginal, 'Scripts','rproj')
+  file.copy(rproj, paste0(project, '.Rproj'))
+}
+
 setwd(dirR)
-save.image(file = paste0(Project.name, ".RData"))
+create_rproj(Project.name)
+
+#remove objects not needed and save
+rm(create_rproj(), dirOriginal)
+
+save.image()
