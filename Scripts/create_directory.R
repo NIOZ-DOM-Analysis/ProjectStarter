@@ -34,8 +34,8 @@ data.path <- file.path(data.path, Project.name)
 
 # Experiment name. check if directory to safe files exist, otherwise create new
 if(exists("sub.experiment.name")){
-ifelse(!dir.exists(file.path(data.path, Experiment.name)), dir.create(file.path(data.path, Experiment.name)), FALSE)
+ifelse(!dir.exists(file.path(data.path, sub.experiment.name)), dir.create(file.path(data.path, sub.experiment.name)), FALSE)
 
 # add Experiment name to string for data path
-data.path <- file.path(data.path, Experiment.name)
+data.path <- file.path(data.path, sub.experiment.name)
 }
