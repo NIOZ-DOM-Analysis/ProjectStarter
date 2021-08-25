@@ -71,6 +71,13 @@ create_rproj <- function(project){
 setwd(dirR)
 ifelse(exists("sub.experiment.name"), create_rproj(paste0(Project.name, "_", sub.experiment.name)), create_rproj(Project.name))
 
+create_gitignore<-function(){
+  gitign <- file.path(dirOriginal, 'Scripts', '.gitignore')
+  file.copy (gitign, ".gitignore" )
+}
+setwd(data.path)
+create_gitignore()
+
 
 #remove objects not needed and save
 rm(create_rproj)
