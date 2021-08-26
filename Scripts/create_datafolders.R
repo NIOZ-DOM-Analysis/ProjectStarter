@@ -83,4 +83,6 @@ create_gitignore()
 rm(create_rproj)
 rm(dirOriginal)
 
+setwd(dirR)
+
 save.image()
