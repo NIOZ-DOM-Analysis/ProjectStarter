@@ -12,7 +12,7 @@ Author<- 'Milou G.I. Arts'  # Who are you? who is doing this analysis?
 
 
 # path where to store the data, new folders will be created based on the information provided above.
-main.data.path <- normalizePath(file.path("..") )#if used it will create a Projects folder in the github folder, otherwise define a file path here ('C:/Users/Name/Documents/NIOZ/DATA')
+main.data.path <- normalizePath(file.path("..") )#if used it will create a Projects folder in the github folder, otherwise define a file path here ('C:/Users/Name/Documents/DATA')
 Data.cleanup.scripts <- normalizePath(file.path("..", "DataCleanup", "Scripts"))
 Project.starter.scripts <- normalizePath(file.path(".","Scripts"))
 
