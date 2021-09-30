@@ -12,13 +12,13 @@ List of alterations:
 # make a Projects folder if directory does not already exist.
 ifelse(!dir.exists(file.path(main.data.path, 'Projects')), dir.create(file.path(main.data.path, 'Projects')), FALSE)
 
-data.path <- normalizePath(file.path(main.data.path, 'Projects'))
+data.path <- file.path(main.data.path, 'Projects')
 
 # Owner initials. check if directory exist, otherwise create new
 ifelse(!dir.exists(file.path(data.path, Owner.initials)), dir.create(file.path(data.path, Owner.initials)), FALSE)
 
-# add owner initals to string
-data.path <- normalizePath(file.path(data.path, Owner.initials))
+# add owner initials to string
+data.path <- file.path(data.path, Owner.initials)
 
 # Project year. check if directory exist, otherwise create new
 ifelse(!dir.exists(file.path(data.path, Project.year)), dir.create(file.path(data.path, Project.year)), FALSE)

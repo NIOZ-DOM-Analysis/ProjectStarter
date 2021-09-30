@@ -36,15 +36,15 @@ ifelse(!dir.exists(file.path(data.path, 'Cytoscape')), dir.create(file.path(data
 dirCyto<-file.path("..", 'Cytoscape')
 
 # Within the Cytoscape directory, directory that contains the normal network, 
-ifelse(!dir.exists(file.path(dirCyto, 'Analogs_on')), dir.create(file.path(dirCyto, 'Analogs_on')), FALSE)
+ifelse(!dir.exists(file.path(data.path, 'Cytoscape', 'Analogs_on')), dir.create(file.path(data.path, 'Cytoscape', 'Analogs_on')), FALSE)
 dir_analogs_on<-file.path("..", 'Cytoscape', 'Analogs_on')
 
 # Within the Cytoscape directory, directory that contains the normal network, 
-ifelse(!dir.exists(file.path(dirCyto, 'MolNetEnhancer')), dir.create(file.path(dirCyto, 'MolNetEnhancer')), FALSE)
+ifelse(!dir.exists(file.path(data.path, 'Cytoscape',  'MolNetEnhancer')), dir.create(file.path(data.path, 'Cytoscape', 'MolNetEnhancer')), FALSE)
 dir_correlation<-file.path("..", 'Cytoscape', 'MolNetEnhancer')
 
 # Within the Output directory, we make a directory for files we write away and read in again, to keep the output folder nice and clean.
-ifelse(!dir.exists(file.path(dirOutput, 'write_read')), dir.create(file.path(dirOutput, 'write_read')), FALSE)
+ifelse(!dir.exists(file.path(data.path, 'output', 'write_read')), dir.create(file.path(data.path, 'output', 'write_read')), FALSE)
 dirWrite<-file.path("..", 'output', 'write_read')
 
 #print(list.dirs(data.path))
@@ -69,7 +69,8 @@ create_rproj <- function(project){
 }
 
 wd.project<-getwd()
-setwd(dirR)
+setwd(data.path)
+setwd("./R")
 ifelse(exists("sub.experiment.name"), create_rproj(paste0(Project.name, "_", sub.experiment.name)), create_rproj(Project.name))
 setwd(wd.project)
 
@@ -78,6 +79,7 @@ create_gitignore<-function(){
   gitign <- file.path(dirOriginal, 'Scripts', '.gitignore')
   file.copy (gitign, ".gitignore" )
 }
+
 wd.project<-getwd()
 setwd(data.path)
 create_gitignore()
@@ -88,7 +90,8 @@ rm(create_rproj)
 rm(dirOriginal)
 
 wd.project<-getwd()
-setwd(dirR)
+setwd(data.path)
+setwd("./R")
 
 
 save.image()

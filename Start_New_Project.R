@@ -3,18 +3,18 @@
 #################################################################
 
 # provide the information for the folder structure. Should be identical to DAS when at NIOZ
-Project.year<- '2018'       # what was the year the project/experiment started?
-Project.name<- 'MCSMAC'     # A project is basically also an experiment, if you do have multiple experiments within one project, please use use sub.experiment
+Project.year<- '2019'       # what was the year the project/experiment started?
+Project.name<- 'ABCDom'     # A project is basically also an experiment, if you do have multiple experiments within one project, please use use sub.experiment
                             # Every project has a name!, probably also an acronym "If you don't have an acronym for your experiment you don't have an experiment!" - Dr. Craig Nelson, 2018
 Owner.initials <- 'MGIA'    # Who's adventure is it? is it yours or is it someone else's (collaborator) aka. who will probably be first author?
-Author<- 'Milou G.I. Arts'  # Who are you? who is doing this analysis?
+Author<- 'Wesley Sparagon and Milou G.I. Arts'  # Who are you? who is doing this analysis?
 # sub.experiment.name<- 'MZmine_settings_Jun19' # this is optional, if you have multiple experiments, or multiple MZmine outputs from different settings, using this option will create a folder within your Project folder
 
 
 # path where to store the data, new folders will be created based on the information provided above.
-main.data.path <- normalizePath(file.path("..") )#if used it will create a Projects folder in the github folder, otherwise define a file path here ('C:/Users/Name/Documents/DATA')
-Data.cleanup.scripts <- normalizePath(file.path("..", "DataCleanup", "Scripts"))
-Project.starter.scripts <- normalizePath(file.path(".","Scripts"))
+main.data.path <- file.path("..") #if used it will create a Projects folder in the github folder, otherwise define a file path here ('C:/Users/Name/Documents/DATA')
+Data.cleanup.scripts <- file.path("..", "DataCleanup", "Scripts")
+Project.starter.scripts <- file.path(".","Scripts")
 
 
 #################################################################
