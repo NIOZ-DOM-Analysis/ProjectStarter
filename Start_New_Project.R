@@ -14,6 +14,7 @@ Author<- 'Milou G.I. Arts'  # Who are you? who is doing this analysis?
 # path where to store the data, new folders will be created based on the information provided above.
 main.data.path <- file.path("..") #if used it will create a Projects folder in the github folder, otherwise define a file path here ('C:/Users/Name/Documents/DATA')
 Data.cleanup.scripts <- file.path( "..", "..","..","..", "..", "DataCleanup", "Scripts")
+Data.cleanup.folder <- file.path( "..", "..","..","..", "..", "DataCleanup")
 Project.starter.scripts <- file.path(".","Scripts")
 
 
