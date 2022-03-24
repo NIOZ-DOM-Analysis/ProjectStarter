@@ -85,6 +85,9 @@ setwd(data.path)
 create_gitignore()
 setwd(wd.project)
 
+#create object to store all figrues in
+All.figures<-list()
+
 #remove objects not needed and save
 rm(create_rproj)
 rm(dirOriginal)
