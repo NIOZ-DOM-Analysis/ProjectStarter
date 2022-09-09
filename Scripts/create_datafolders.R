@@ -27,19 +27,19 @@ dirOutput<-file.path("..", 'output')
 ifelse(!dir.exists(file.path(data.path, 'figures')), dir.create(file.path(data.path, 'figures')), FALSE)
 dirFigs<-file.path("..", 'figures')
 
-# Document directory, directory that contains the paper, 
+# Document directory, directory that contains the paper,
 ifelse(!dir.exists(file.path(data.path, 'doc')), dir.create(file.path(data.path, 'doc')), FALSE)
 dirDoc<-file.path("..", 'doc')
 
-# Cytoscape directory, directory that contains the cytoscape data, 
+# Cytoscape directory, directory that contains the cytoscape data,
 ifelse(!dir.exists(file.path(data.path, 'Cytoscape')), dir.create(file.path(data.path, 'Cytoscape')), FALSE)
 dirCyto<-file.path("..", 'Cytoscape')
 
-# Within the Cytoscape directory, directory that contains the normal network, 
+# Within the Cytoscape directory, directory that contains the normal network,
 ifelse(!dir.exists(file.path(data.path, 'Cytoscape', 'Analogs_on')), dir.create(file.path(data.path, 'Cytoscape', 'Analogs_on')), FALSE)
 dir_analogs_on<-file.path("..", 'Cytoscape', 'Analogs_on')
 
-# Within the Cytoscape directory, directory that contains the normal network, 
+# Within the Cytoscape directory, directory that contains the normal network,
 ifelse(!dir.exists(file.path(data.path, 'Cytoscape',  'MolNetEnhancer')), dir.create(file.path(data.path, 'Cytoscape', 'MolNetEnhancer')), FALSE)
 dir_correlation<-file.path("..", 'Cytoscape', 'MolNetEnhancer')
 
@@ -85,7 +85,7 @@ setwd(data.path)
 create_gitignore()
 setwd(wd.project)
 
-#create object to store all figrues in
+#create object to store all figures in
 All.figures<-list()
 
 #remove objects not needed and save
