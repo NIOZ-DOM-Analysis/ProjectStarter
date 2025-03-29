@@ -33,9 +33,8 @@ source(file.path(Project.starter.scripts,'create_directory.R'))
 source(file.path(Project.starter.scripts,'create_datafolders.R'))
 
 
-#if this is the first time running this, create a new project (in existing directory)
-#and save this in the created R folder
-
+#if this is the first time running this, there is a new project created which you can open now after closing this one
+# but read below what you need to do
 
 #################################################################
 ####                    USER ACTION Required                 ####
